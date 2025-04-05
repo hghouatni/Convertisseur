@@ -24,7 +24,7 @@ public class Conversion {
                 	convertirKilometresEnMiles(scanner);
                     break;
                 case "3":
-                    //convertirEurosEnDollars(scanner);
+                    convertirEurosEnDollars(scanner);
                     break;
                 case "4":
                     //convertirKilogrammesEnLivres(scanner);
@@ -58,6 +58,18 @@ public class Conversion {
             double km = Double.parseDouble(scanner.nextLine());
             double miles = km * 0.621371;
             System.out.println(km + " km = " + miles + " miles");
+        } catch (NumberFormatException e) {
+            System.out.println("Erreur : veuillez entrer un nombre valide.");
+        }
+    }
+	
+	private static void convertirEurosEnDollars(Scanner scanner) {
+        System.out.print("Entrez le montant en euros : ");
+        try {
+            double euros = Double.parseDouble(scanner.nextLine());
+            double tauxConversion = 1.08; // Taux de conversion fixe
+            double dollars = euros * tauxConversion;
+            System.out.println(euros + " € = " + dollars + " $");
         } catch (NumberFormatException e) {
             System.out.println("Erreur : veuillez entrer un nombre valide.");
         }

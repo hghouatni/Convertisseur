@@ -21,7 +21,7 @@ public class Conversion {
                     convertirCelsiusEnFahrenheit(scanner);
                     break;
                 case "2":
-                    //convertirKilometresEnMiles(scanner);
+                	convertirKilometresEnMiles(scanner);
                     break;
                 case "3":
                     //convertirEurosEnDollars(scanner);
@@ -47,6 +47,17 @@ public class Conversion {
             double celsius = Double.parseDouble(scanner.nextLine());
             double fahrenheit = (celsius * 9 / 5) + 32;
             System.out.println(celsius + " °C = " + fahrenheit + " °F");
+        } catch (NumberFormatException e) {
+            System.out.println("Erreur : veuillez entrer un nombre valide.");
+        }
+    }
+	
+	private static void convertirKilometresEnMiles(Scanner scanner) {
+        System.out.print("Entrez la distance en kilomètres : ");
+        try {
+            double km = Double.parseDouble(scanner.nextLine());
+            double miles = km * 0.621371;
+            System.out.println(km + " km = " + miles + " miles");
         } catch (NumberFormatException e) {
             System.out.println("Erreur : veuillez entrer un nombre valide.");
         }

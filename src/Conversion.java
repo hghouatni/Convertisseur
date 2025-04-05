@@ -27,7 +27,7 @@ public class Conversion {
                     convertirEurosEnDollars(scanner);
                     break;
                 case "4":
-                    //convertirKilogrammesEnLivres(scanner);
+                    convertirKilogrammesEnLivres(scanner);
                     break;
                 case "5":
                     System.out.println("Merci d'avoir utilisé le programme. À bientôt !");
@@ -70,6 +70,17 @@ public class Conversion {
             double tauxConversion = 1.08; // Taux de conversion fixe
             double dollars = euros * tauxConversion;
             System.out.println(euros + " € = " + dollars + " $");
+        } catch (NumberFormatException e) {
+            System.out.println("Erreur : veuillez entrer un nombre valide.");
+        }
+    }
+	
+	private static void convertirKilogrammesEnLivres(Scanner scanner) {
+        System.out.print("Entrez la masse en kilogrammes : ");
+        try {
+            double kg = Double.parseDouble(scanner.nextLine());
+            double livres = kg * 2.20462;
+            System.out.println(kg + " kg = " + livres + " livres");
         } catch (NumberFormatException e) {
             System.out.println("Erreur : veuillez entrer un nombre valide.");
         }

@@ -18,7 +18,7 @@ public class Conversion {
 
             switch (choix) {
                 case "1":
-                    //convertirCelsiusEnFahrenheit(scanner);
+                    convertirCelsiusEnFahrenheit(scanner);
                     break;
                 case "2":
                     //convertirKilometresEnMiles(scanner);
@@ -39,5 +39,16 @@ public class Conversion {
         }
 
         scanner.close();
+    }
+	
+	private static void convertirCelsiusEnFahrenheit(Scanner scanner) {
+        System.out.print("Entrez la température en Celsius : ");
+        try {
+            double celsius = Double.parseDouble(scanner.nextLine());
+            double fahrenheit = (celsius * 9 / 5) + 32;
+            System.out.println(celsius + " °C = " + fahrenheit + " °F");
+        } catch (NumberFormatException e) {
+            System.out.println("Erreur : veuillez entrer un nombre valide.");
+        }
     }
 }
